@@ -20,5 +20,24 @@ await writeFile(
   join(pagesDir, "_worker.js"),
   'import worker from "./server/index.js";\n\nexport default worker;\n',
 );
+await writeFile(
+  join(pagesDir, "_routes.json"),
+  JSON.stringify(
+    {
+      version: 1,
+      include: ["/*"],
+      exclude: [
+        "/_next/static/*",
+        "/favicon.svg",
+        "/file.svg",
+        "/globe.svg",
+        "/window.svg",
+        "/resources/*",
+      ],
+    },
+    null,
+    2,
+  ),
+);
 
 console.log("Prepared Cloudflare Pages output in dist/pages");
