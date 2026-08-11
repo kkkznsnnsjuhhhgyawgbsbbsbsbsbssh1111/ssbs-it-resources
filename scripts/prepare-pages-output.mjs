@@ -1,4 +1,4 @@
-import { cp, mkdir, rm } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
@@ -15,7 +15,10 @@ await rm(pagesDir, { recursive: true, force: true });
 await mkdir(pagesDir, { recursive: true });
 
 await cp(clientDir, pagesDir, { recursive: true });
-await cp(serverDir, pagesDir, { recursive: true });
-await cp(join(serverDir, "index.js"), join(pagesDir, "_worker.js"));
+await cp(serverDir, join(pagesDir, "server"), { recursive: true });
+await writeFile(
+  join(pagesDir, "_worker.js"),
+  'import worker from "./server/index.js";\n\nexport default worker;\n',
+);
 
 console.log("Prepared Cloudflare Pages output in dist/pages");
