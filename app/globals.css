@@ -1219,12 +1219,15 @@ button:disabled {
   background: var(--blue);
   border-radius: 14px;
   color: #fff !important;
-  display: inline-flex;
+  display: grid !important;
   font-size: 24px;
   font-weight: 800;
   grid-row: 1 / span 3;
   height: 58px;
   justify-content: center;
+  line-height: 1;
+  place-items: center;
+  text-align: center;
   width: 58px;
 }
 
@@ -1360,6 +1363,25 @@ button:disabled {
 
 .adminPanel {
   box-shadow: 0 12px 30px rgba(23, 32, 51, 0.05);
+}
+
+.adminResourceTable .tableRow div {
+  border-top: 1px solid var(--line);
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  padding-top: 12px;
+}
+
+.adminResourceTable .tableRow button {
+  min-width: 84px;
+}
+
+.adminColumns {
+  grid-template-columns: 1fr;
+}
+
+.adminColumns .adminPanel {
+  max-width: none;
 }
 
 @media (max-width: 920px) {
