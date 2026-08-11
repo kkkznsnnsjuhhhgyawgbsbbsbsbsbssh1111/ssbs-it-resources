@@ -32,7 +32,6 @@ await writeFile(
         "/file.svg",
         "/globe.svg",
         "/window.svg",
-        "/resources/*",
       ],
     },
     null,
