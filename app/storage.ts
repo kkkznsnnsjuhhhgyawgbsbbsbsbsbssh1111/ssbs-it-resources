@@ -423,7 +423,7 @@ export async function createResource(formData: FormData) {
         type: "text/html; charset=utf-8",
       });
   const filename = safeFilename(file.name);
-  const publicId = `${toSlug(title) || "resource"}-${Date.now().toString(36)}`;
+  const publicId = `resource-${Date.now().toString(36)}-${Math.random().toString(16).slice(2, 8)}`;
   const r2ObjectKey = `resources/${publicId}/${filename}`;
   const course = await getOrCreateCategory(db, "course", courseName);
   const resourceType = await getOrCreateCategory(db, "resource_type", typeName);
