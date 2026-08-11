@@ -34,7 +34,7 @@ export default function LoginPage() {
           </label>
           <label>
             密码
-            <input name="password" type="password" autoComplete="current-password" />
+            <input name="password" type="text" autoComplete="current-password" />
           </label>
           <button type="submit">进入后台</button>
           <small>登录使用后台创建的用户名和密码。</small>

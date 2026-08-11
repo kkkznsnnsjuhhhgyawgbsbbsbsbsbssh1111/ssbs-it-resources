@@ -1,5 +1,14 @@
 import { extensionCourses, itCourses } from "./data";
 
+const courseSubtitles: Record<string, string> = {
+  "六年级 IT": "课堂资源 · 练习素材",
+  "七年级 IT": "课堂资源 · 示例文件",
+  "八年级 IT": "课堂资源 · 项目素材",
+  "六年级 Python": "代码示例 · 课堂练习",
+  "七年级 Python": "代码示例 · 拓展任务",
+  人工智能课程: "课程素材 · AI 体验",
+};
+
 export default function Home() {
   return (
     <main className="homePage">
@@ -33,10 +42,16 @@ export default function Home() {
               <h2>IT学科</h2>
             </div>
             <div className="quickGrid">
-              {itCourses.map((course) => (
-                <a href={`/resources?course=${encodeURIComponent(course)}`} key={course}>
+              {itCourses.map((course, index) => (
+                <a
+                  className="courseEntry"
+                  href={`/resources?course=${encodeURIComponent(course)}`}
+                  key={course}
+                >
+                  <span className="courseBadge">{index + 6}</span>
                   <strong>{course}</strong>
-                  <span>进入资源</span>
+                  <span>{courseSubtitles[course] ?? "进入资源目录"}</span>
+                  <small>进入资源</small>
                 </a>
               ))}
             </div>
@@ -48,8 +63,15 @@ export default function Home() {
             </div>
             <div className="courseGrid">
               {extensionCourses.map((course) => (
-                <a href={`/resources?course=${encodeURIComponent(course)}`} key={course}>
-                  {course}
+                <a
+                  className="courseEntry extensionEntry"
+                  href={`/resources?course=${encodeURIComponent(course)}`}
+                  key={course}
+                >
+                  <span className="courseBadge">+</span>
+                  <strong>{course}</strong>
+                  <span>{courseSubtitles[course] ?? "进入资源目录"}</span>
+                  <small>进入资源</small>
                 </a>
               ))}
             </div>

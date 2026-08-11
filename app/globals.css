@@ -1106,3 +1106,291 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 }
+
+/* Refined SSBS layout pass */
+.siteHeader {
+  min-height: 76px;
+}
+
+.brand strong {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.brandIcon {
+  box-shadow: 0 10px 24px rgba(29, 95, 209, 0.22);
+}
+
+.homeShell {
+  gap: 24px;
+  max-width: 1180px;
+  padding-top: 44px;
+}
+
+.homeIntro h1 {
+  font-size: clamp(34px, 4.4vw, 48px);
+  margin-bottom: 0;
+}
+
+.homeSearch {
+  margin-top: 22px;
+}
+
+.homeCoursePanel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), #fff),
+    radial-gradient(circle at 10% 0%, rgba(29, 95, 209, 0.08), transparent 32%);
+  border-radius: 14px;
+  gap: 32px;
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.homeCourseGroup .sectionTitle {
+  align-items: center;
+  border-bottom: 0;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 0;
+}
+
+.homeCourseGroup .sectionTitle::before {
+  background: var(--blue);
+  border-radius: 999px;
+  content: "";
+  height: 28px;
+  width: 5px;
+}
+
+.homeCourseGroup:nth-child(2) .sectionTitle::before {
+  background: var(--green);
+}
+
+.homeCourseGroup h2 {
+  color: #0f1f3d;
+  font-size: 26px;
+}
+
+.quickGrid,
+.courseGrid {
+  gap: 18px;
+}
+
+.quickGrid a.courseEntry,
+.courseGrid a.courseEntry {
+  align-items: center;
+  background:
+    linear-gradient(135deg, #ffffff 0%, #ffffff 58%, #eef5ff 100%);
+  border: 1px solid #bfd3f4;
+  border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(29, 95, 209, 0.08);
+  display: grid;
+  gap: 4px 16px;
+  grid-template-columns: 58px 1fr;
+  min-height: 138px;
+  padding: 24px 22px;
+  position: relative;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.courseGrid a.extensionEntry {
+  background:
+    linear-gradient(135deg, #ffffff 0%, #ffffff 58%, #eaf8f1 100%);
+  border-color: #b9dece;
+  box-shadow: 0 14px 34px rgba(18, 128, 92, 0.08);
+}
+
+.quickGrid a.courseEntry:hover,
+.courseGrid a.courseEntry:hover {
+  border-color: var(--blue);
+  box-shadow: 0 18px 38px rgba(29, 95, 209, 0.14);
+  transform: translateY(-2px);
+}
+
+.courseGrid a.extensionEntry:hover {
+  border-color: var(--green);
+  box-shadow: 0 18px 38px rgba(18, 128, 92, 0.14);
+}
+
+.courseBadge {
+  align-items: center;
+  background: var(--blue);
+  border-radius: 14px;
+  color: #fff !important;
+  display: inline-flex;
+  font-size: 24px;
+  font-weight: 800;
+  grid-row: 1 / span 3;
+  height: 58px;
+  justify-content: center;
+  width: 58px;
+}
+
+.extensionEntry .courseBadge {
+  background: var(--green);
+}
+
+.courseEntry strong {
+  color: #102044;
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.courseEntry span:not(.courseBadge) {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.courseEntry small {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  grid-column: 2;
+  grid-row: auto;
+  white-space: nowrap;
+}
+
+.extensionEntry small {
+  color: var(--green);
+}
+
+.pageIntro {
+  padding-bottom: 22px;
+  padding-top: 46px;
+}
+
+.pageIntro h1 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.directoryLayout,
+.resourceLayout,
+.detailShell {
+  max-width: 1180px;
+}
+
+.filterPanel,
+.resourceCard,
+.detailMain,
+.downloadPanel,
+.loginCard,
+.adminPanel,
+.adminSide {
+  border-radius: 10px;
+}
+
+.resourceCard.horizontal {
+  border-left: 5px solid var(--blue);
+}
+
+.resourceCard h2 {
+  font-size: 24px;
+}
+
+.resourceCard small {
+  color: var(--muted);
+}
+
+.cardMeta span {
+  padding: 7px 10px;
+}
+
+.detailMain h1 {
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+.teacherLoginShell {
+  max-width: 1120px;
+  min-height: calc(100vh - 76px);
+}
+
+.teacherLoginIntro h1 {
+  font-size: clamp(34px, 4.4vw, 54px);
+}
+
+.teacherLoginCard {
+  border-top: 5px solid var(--blue);
+}
+
+.adminShell {
+  gap: 22px;
+  grid-template-columns: 168px minmax(0, 1fr);
+  padding-left: clamp(20px, 2.4vw, 32px);
+  padding-right: clamp(20px, 2.4vw, 32px);
+}
+
+.adminSide {
+  top: 96px;
+}
+
+.adminMain {
+  gap: 22px;
+}
+
+.overviewHeader {
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(23, 32, 51, 0.05);
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
+  padding: 20px;
+}
+
+.overviewHeader .sectionTitle {
+  align-self: center;
+}
+
+.overviewHeader h1 {
+  font-size: clamp(34px, 3.6vw, 48px);
+  margin-bottom: 0;
+}
+
+.statGrid div {
+  background: #f1f6ff;
+}
+
+.statGrid strong {
+  font-size: 22px;
+}
+
+.adminPanel {
+  box-shadow: 0 12px 30px rgba(23, 32, 51, 0.05);
+}
+
+@media (max-width: 920px) {
+  .overviewHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .quickGrid,
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeShell {
+    padding-top: 30px;
+  }
+
+  .quickGrid a.courseEntry,
+  .courseGrid a.courseEntry {
+    grid-template-columns: 52px 1fr;
+    min-height: 120px;
+  }
+
+  .courseBadge {
+    height: 52px;
+    width: 52px;
+  }
+
+  .courseEntry small {
+    grid-column: 2;
+    grid-row: auto;
+  }
+}
