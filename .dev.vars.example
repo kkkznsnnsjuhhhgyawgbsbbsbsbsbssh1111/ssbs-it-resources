@@ -1,0 +1,5 @@
+SESSION_SECRET=replace-with-a-long-random-secret
+MAX_UPLOAD_BYTES=52428800
+ALLOWED_FILE_EXTENSIONS=.zip,.7z,.pdf,.pptx,.docx,.xlsx,.py,.html,.css,.js,.txt,.csv,.jpg,.jpeg,.png,.webp
+TURNSTILE_SITE_KEY=
+TURNSTILE_SECRET_KEY=
